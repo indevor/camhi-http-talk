@@ -13,16 +13,16 @@ CamHi Pro cube camera, model `C6F0SgZ3N0PlL2`, board `T31_2083_1.1`.
 
 ![Плата, сторона компонентов](images/board-front.jpg)
 
-*Плата со стороны компонентов. Видны SoC Ingenic T31, модуль TF1102, аудиочип
-ZT810 на зелёной плашке и разъёмы SPK / MIC.*
+*Плата со стороны компонентов. Видны SoC Ingenic T31, модуль TF1102, WiFi-модуль
+ZT9101UV на зелёной плашке и разъёмы SPK / MIC.*
 
 | Что | Обозначение | Примечание |
 |---|---|---|
 | SoC | **Ingenic T31** | MIPS32 XBurst — совпадает с тем, что дала прошивка |
 | Плата | `T31_2083_1.1` | шелкография |
 | Сетевой модуль | `TF1102 2331T` | согласующий трансформатор Ethernet |
-| Аудиочип | `ZT810` / `ZT81010V` | на отдельной зелёной плашке |
-| Флеш | `FS25Q064F2TFI1` | 8 МБ, определяется в U-Boot |
+| WiFi-модуль | `ZT9101UV` | на отдельной зелёной плашке |
+| Флеш | `FM25Q64A13` | 8 МБ; U-Boot определяет её как `FS25Q064F2TFI1` |
 | Разъёмы | `SPK`, `MIC` | динамик и микрофон |
 
 **`SPK` — это тот самый разъём динамика**, на который мы отправляем звук.
@@ -66,16 +66,16 @@ python src/camhi_speaker_http.py --get-volume
 
 ![Board, component side](images/board-front.jpg)
 
-*Component side. The Ingenic T31 SoC, the TF1102 module, the ZT810 audio chip on
-its own green daughter board, and the SPK / MIC connectors.*
+*Component side. The Ingenic T31 SoC, the TF1102 module, the ZT9101UV WiFi module
+on its own green daughter board, and the SPK / MIC connectors.*
 
 | Item | Marking | Note |
 |---|---|---|
 | SoC | **Ingenic T31** | MIPS32 XBurst — matches the firmware analysis |
 | Board | `T31_2083_1.1` | silkscreen |
 | Network module | `TF1102 2331T` | Ethernet magnetics |
-| Audio chip | `ZT810` / `ZT81010V` | on a separate green daughter board |
-| Flash | `FS25Q064F2TFI1` | 8 MB, reported by U-Boot |
+| WiFi module | `ZT9101UV` | on a separate green daughter board |
+| Flash | `FM25Q64A13` | 8 MB; U-Boot reports it as `FS25Q064F2TFI1` |
 | Connectors | `SPK`, `MIC` | speaker and microphone |
 
 **`SPK` is the speaker connector** we send audio to. The speaker itself was the
