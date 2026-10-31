@@ -1,0 +1,24 @@
+# --- credentials and captures must never be committed ---
+p2p_frames.py
+*.pcap
+*.pcapng
+*.cap
+
+# --- local secrets / config ---
+.env
+config.local.*
+secrets.*
+
+# --- python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+
+# --- editors / OS ---
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini

@@ -1,0 +1,63 @@
+# Home Assistant — CamHi / HiChip camera speaker
+#
+# Copy the relevant parts into your configuration.yaml.
+# See README.md in this folder for the Russian/English walkthrough.
+
+shell_command:
+  # play a WAV file ({{ wav }} is passed from the automation/button)
+  camhi_say: >-
+    python3 /config/camhi/src/camhi_speaker_http.py
+    --cam 192.168.1.129 --wav {{ wav }}
+
+  # short attention tone
+  camhi_tone: >-
+    python3 /config/camhi/src/camhi_speaker_http.py
+    --cam 192.168.1.129 --tone 2
+
+  # louder variant: the camera's own volume is often low (e.g. 5/100)
+  camhi_say_loud: >-
+    python3 /config/camhi/src/camhi_speaker_http.py
+    --cam 192.168.1.129 --wav {{ wav }} --volume 300
+
+  # Windows host speaking a phrase through SAPI
+  camhi_tts: >-
+    python src/camhi_tts.py --cam 192.168.1.129 "{{ text }}"
+
+# ---------------------------------------------------------------------------
+# Automations
+# ---------------------------------------------------------------------------
+automation:
+  - alias: "Camera: someone at the door"
+    id: camhi_doorbell
+    mode: queued
+    max: 3
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.doorbell
+        to: "on"
+    action:
+      - service: shell_command.camhi_say
+        data:
+          wav: /config/sounds/who_is_there.wav
+
+  - alias: "Camera: motion warning"
+    id: camhi_motion
+    mode: single
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.camera_motion
+        to: "on"
+    action:
+      - service: shell_command.camhi_tone
+
+# ---------------------------------------------------------------------------
+# A dashboard button (put this in your Lovelace view)
+# ---------------------------------------------------------------------------
+# type: button
+# name: Speak on camera
+# icon: mdi:bullhorn
+# tap_action:
+#   action: call-service
+#   service: shell_command.camhi_say
+#   data:
+#     wav: /config/sounds/attention.wav
