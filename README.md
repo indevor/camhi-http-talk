@@ -51,6 +51,17 @@ no vendor app. Standard library only.
 Подробный разбор, адреса функций и дизассемблер — в
 [`docs/PROTOCOL.md`](docs/PROTOCOL.md).
 
+## Железо
+
+<img src="docs/images/board-front.jpg" width="420" alt="Плата камеры">
+
+SoC **Ingenic T31**, плата `T31_2083_1.1`, аудиочип `ZT810`, разъёмы `SPK` и
+`MIC`, флеш `FS25Q064F2TFI1` (8 МБ). **Громкость динамика** задаётся в
+веб-интерфейсе камеры: `Settings → Media → Audio` (CGI `setaudiooutvolume`
+на этой прошивке не работает).
+
+Фотографии и подробности — в [`docs/HARDWARE.md`](docs/HARDWARE.md).
+
 ## Что нужно
 
 * Python **3.9+** (используется только стандартная библиотека, ставить нечего)
@@ -230,6 +241,17 @@ no P2P and no encryption.
 ```
 
 Full details, function addresses and disassembly: [`docs/PROTOCOL.md`](docs/PROTOCOL.md).
+
+## Hardware
+
+<img src="docs/images/board-front.jpg" width="420" alt="Camera board">
+
+**Ingenic T31** SoC, board `T31_2083_1.1`, `ZT810` audio chip, `SPK` and `MIC`
+connectors, `FS25Q064F2TFI1` flash (8 MB). The **speaker volume** is set in the
+camera's web UI: `Settings → Media → Audio` (the `setaudiooutvolume` CGI does not
+work on this firmware).
+
+Photos and details: [`docs/HARDWARE.md`](docs/HARDWARE.md).
 
 ## Requirements
 
