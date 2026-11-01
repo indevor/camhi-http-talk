@@ -25,9 +25,7 @@ ZT9101UV на зелёной плашке и разъёмы SPK / MIC.*
 | Флеш | `FM25Q64A13` | 8 МБ; U-Boot определяет её как `FS25Q064F2TFI1` |
 | Разъёмы | `SPK`, `MIC` | динамик и микрофон |
 
-**`SPK` — это тот самый разъём динамика**, на который мы отправляем звук.
-Именно динамик был причиной «хрипа»: после замены на качественный речь стала
-чистой (искажения от кодека A-law — отдельная история, см. `PROTOCOL.md` §8).
+**`SPK` — разъём динамика**
 
 ![Плата в корпусе](images/board-back.jpg)
 
@@ -78,10 +76,7 @@ on its own green daughter board, and the SPK / MIC connectors.*
 | Flash | `FM25Q64A13` | 8 MB; U-Boot reports it as `FS25Q064F2TFI1` |
 | Connectors | `SPK`, `MIC` | speaker and microphone |
 
-**`SPK` is the speaker connector** we send audio to. The speaker itself was the
-cause of the crackling: after swapping it for a good one the speech came out
-clean (distortion from the A-law codec is a separate matter — see
-`PROTOCOL.md` §8).
+**`SPK` is the speaker connector**
 
 ![Board inside the housing](images/board-back.jpg)
 
