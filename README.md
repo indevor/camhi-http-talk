@@ -1,4 +1,4 @@
-# CamHi / HiChip IP camera — audio to the camera speaker, no firmware changes
+# CamHi / HiChip IP camera — audio to the camera speaker (two way audio/talkback), no firmware changes
 
 **Send a message, TTS or any WAV to the speaker of a CamHi Pro / HiChip (Ingenic
 T31) IP camera over the network.** No firmware modification, no root, no cloud,
